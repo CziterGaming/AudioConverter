@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>ftp://host4.5v.pl/kezu/files/converter/|ftp://host4.5v.pl/|ftp://host4.5v.pl/kezu/|ftp://kezu.5v.pl/kezu/files/converter/|publikuj\</PublishUrlHistory>
+    <InstallUrlHistory>http://kezu.5v.pl/files/converter/|http://kezu.5v.pl/files/coder/</InstallUrlHistory>
+    <SupportUrlHistory />
+    <UpdateUrlHistory>http://kezu.5v.pl/files/converter/</UpdateUrlHistory>
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>pl-PL</FallbackCulture>
+    <VerifyUploadedFiles>true</VerifyUploadedFiles>
+  </PropertyGroup>
+</Project>
