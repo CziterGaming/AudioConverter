@@ -52,22 +52,6 @@ namespace converter
                     }
                     rk.Close();
                 }
-
-                using (RegistryKey regk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\CziterGaming\\", true))
-                {
-                    if (regk.GetValue("isOpenFolderEnabled").ToString() == "1")
-                    {
-                        isOpenFolderEnabled = true;
-                    }
-                    else if (regk.GetValue("isOpenFolderEnabled").ToString() == "0")
-                    {
-                        isOpenFolderEnabled = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error");
-                    }
-                }
             }
             catch (Exception ex)
             {
@@ -126,7 +110,6 @@ namespace converter
                 {
                     WaveFileWriter.CreateWaveFile(FileNameWithExtension, mfr);
                 }
-                Process.Start(OutputFilePath);
             }
             else if (radioButton2.Checked)
             {
@@ -143,7 +126,30 @@ namespace converter
                 MessageBox.Show("Select output format.");
             }
 
-            if (isOpenFolderEnabled == true)
+            try
+            {
+                using (RegistryKey regk = Registry.CurrentUser.OpenSubKey("SOFTWARE\\CziterGaming\\", true))
+                {
+                    if (regk.GetValue("isOpenFolderEnabled").ToString() == "1")
+                    {
+                        isOpenFolderEnabled = true;
+                    }
+                    else if (regk.GetValue("isOpenFolderEnabled").ToString() == "0")
+                    {
+                        isOpenFolderEnabled = false;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            if (isOpenFolderEnabled)
             {
                 Process.Start(OutputFilePath);
             }
