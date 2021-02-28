@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -137,15 +137,15 @@ namespace converter
                 string FileNameWithExtension = OutputFilePath + FileName + ".mp3";
 
                 ConvertWavStreamToMp3File(ref ms, FileNameWithExtension);
-
-                if (isOpenFolderEnabled == true)
-                {
-                    Process.Start(OutputFilePath);
-                }
             }
             else
             {
                 MessageBox.Show("Select output format.");
+            }
+
+            if (isOpenFolderEnabled == true)
+            {
+                Process.Start(OutputFilePath);
             }
         }
 
